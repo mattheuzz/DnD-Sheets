@@ -19,7 +19,8 @@ const CharacterSheet = {
       mainConstitution,
       mainIntelligence,
       mainWisdom,
-      mainCharisma
+      mainCharisma,
+      proficiencyLangueges,
     } = req.body
     
     const owner = req.user._id
@@ -33,7 +34,7 @@ const CharacterSheet = {
     
     const proficiencyBonus = ProficiencyBonus(characterLevel)
 
-    const CharacterH = Mongoose.model('character-history', character, 'character-history')
+    const CharacterH = Mongoose.model('character', character, 'character')
 
     try {
       const creatCharacter = await CharacterH.create({
@@ -51,6 +52,7 @@ const CharacterSheet = {
         mainIntelligence,
         mainWisdom,
         mainCharisma,
+        proficiencyLangueges,
         modStrength,
         modDexterity,
         modConstitution,

@@ -53,6 +53,10 @@ const character = new Mongoose.Schema({
     type: String,
     required: true
   },
+  proficiencyLangueges:{
+    type: Object,
+    required: true
+  },
   modStrength:{
     type: String,
     required:true
