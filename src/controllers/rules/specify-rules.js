@@ -3,7 +3,9 @@ import { ideas } from "../../services/external-api.js"
 
 const EspecifyRules= {
   especify(req, res){
-    const { theme, about } = req.body
+    const { about } = req.body
+
+    const theme = 'rule-sections'
 
     try{
       axios.request(ideas(theme, about))

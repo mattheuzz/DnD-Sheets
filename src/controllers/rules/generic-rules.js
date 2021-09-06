@@ -3,9 +3,9 @@ import { genericIdeas } from "../../services/external-api.js";
 
 const GenericRules = {
   generic(req, res) {
-    const { theme } = req.body
+    
     try{
-      axios.request(genericIdeas(theme))
+      axios.request(genericIdeas('rules'))
         .then((response) => {
           let resp = response.data
           res.send(resp)
